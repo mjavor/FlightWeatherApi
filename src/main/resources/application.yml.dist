@@ -1,0 +1,15 @@
+sky_scanner_api:
+  base_url: 'http://api.aviationstack.com/v1'
+  access_key: ''
+
+open_weather_map_api:
+  base_url: 'https://community-open-weather-map.p.rapidapi.com'
+  x_rapid_api_key: ''
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://root:root@localhost:9905/flight-weather
+
+server:
+  port: 8000
