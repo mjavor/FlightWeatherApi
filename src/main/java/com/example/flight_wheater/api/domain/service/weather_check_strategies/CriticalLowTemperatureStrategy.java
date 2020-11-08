@@ -11,13 +11,19 @@ public class CriticalLowTemperatureStrategy extends BaseWeatherCheckStrategy {
 
     private static final String STRATEGY_NAME = "CriticalLowTemperatureStrategy";
 
+    protected static final double LOWEST_ALLOWED_TEMPERATURE = -18.7;
+
     public CriticalLowTemperatureStrategy(WeatherCheckResultFactory weatherCheckResultFactory) {
         super(weatherCheckResultFactory);
     }
 
     @Override
     public WeatherCheckBaseResult checkWeather(Flight flight, Weather weather) {
-        return null;
+        if (weather.temperature() >= LOWEST_ALLOWED_TEMPERATURE) {
+            return this.weatherCheckResultFactory.createPositive(flight, weather, this.getStrategyName());
+        }
+
+        return this.weatherCheckResultFactory.createNegative(flight, weather, this.getStrategyName());
     }
 
     @Override

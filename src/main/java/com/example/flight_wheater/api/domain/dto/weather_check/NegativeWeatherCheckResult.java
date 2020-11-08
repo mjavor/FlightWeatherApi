@@ -4,9 +4,9 @@ import com.example.flight_wheater.api.domain.WeatherCheckResultType;
 import com.example.flight_wheater.api.domain.dto.Flight;
 import com.example.flight_wheater.api.domain.dto.Weather;
 
-public class NegativeWeatherCheckBaseResult extends WeatherCheckBaseResult {
+public class NegativeWeatherCheckResult extends WeatherCheckBaseResult {
 
-    NegativeWeatherCheckBaseResult(Flight flight, Weather weather, String verdictCheckerName) {
+    public NegativeWeatherCheckResult(Flight flight, Weather weather, String verdictCheckerName) {
         super(flight, weather, verdictCheckerName);
     }
 

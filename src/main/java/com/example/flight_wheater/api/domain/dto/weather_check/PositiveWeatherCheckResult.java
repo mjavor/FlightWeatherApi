@@ -4,14 +4,14 @@ import com.example.flight_wheater.api.domain.WeatherCheckResultType;
 import com.example.flight_wheater.api.domain.dto.Flight;
 import com.example.flight_wheater.api.domain.dto.Weather;
 
-public class MiddlingWeatherCheckBaseResult extends WeatherCheckBaseResult {
+public class PositiveWeatherCheckResult extends WeatherCheckBaseResult {
 
-    MiddlingWeatherCheckBaseResult(Flight flight, Weather weather, String weatherCheckStrategyName) {
-        super(flight, weather, weatherCheckStrategyName);
+    public PositiveWeatherCheckResult(Flight flight, Weather weather, String verdictCheckerName) {
+        super(flight, weather, verdictCheckerName);
     }
 
     @Override
     public WeatherCheckResultType getType() {
-        return WeatherCheckResultType.middling;
+        return WeatherCheckResultType.positive;
     }
 }

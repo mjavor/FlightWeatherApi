@@ -17,6 +17,7 @@ public class FlightWeatherConditionsController {
     @GetMapping("/")
     void findWeatherComplications() {
         List<WeatherCheckBaseResult> results = flightService.checkWeather();
+        int a = 5;
     }
 
 }
